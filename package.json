@@ -1,0 +1,26 @@
+{
+  "name": "t-js-utils",
+  "version": "1.0.0",
+  "description": "(Biased) Js util functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teroqim/t-js-utils.git"
+  },
+  "keywords": [
+    "js",
+    "utils"
+  ],
+  "author": "Peter Andersson <teroqim@gmail.com> (https://github.com/teroqim)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teroqim/t-js-utils/issues"
+  },
+  "homepage": "https://github.com/teroqim/t-js-utils#readme",
+  "dependencies": {
+    "dateformat": "^2.0.0"
+  }
+}
