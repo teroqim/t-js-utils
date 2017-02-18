@@ -200,7 +200,7 @@ module.exports = {
     return `${minutes} min left`
   },
   usernameDescription: 'Your username can only include letters, numbers and hyphens. It must also contain 3 or more characters',
-  scrollToY: (scrollTargetY, speed, easing) => {
+  scrollToY: (el, scrollTargetY, speed, easing) => {
     // http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
 
     // first add raf shim
@@ -213,10 +213,11 @@ module.exports = {
                 window.setTimeout(callback, 1000 / 60)
               })
     })()
+
     // scrollTargetY: the target scrollY property of the window
     // speed: time in pixels per second
     // easing: easing equation to use
-    const scrollY = window.scrollY || document.documentElement.scrollTop
+    const scrollY = el.scrollTop
     scrollTargetY = scrollTargetY || 0
     speed = speed || 2000
     easing = easing || 'easeOutSine'
@@ -224,7 +225,6 @@ module.exports = {
 
     // min time .1, max time .8 seconds
     const time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8))
-
     // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
     const easingEquations = {
       easeOutSine: pos => Math.sin(pos * (Math.PI / 2)),
@@ -246,11 +246,11 @@ module.exports = {
 
       if (p < 1) {
         requestAnimFrame(tick)
-        window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t))
+        el.scrollTop = scrollY + (scrollTargetY - scrollY) * t
       }
       else {
         // console.log('scroll done')
-        window.scrollTo(0, scrollTargetY)
+        el.scrollTop = scrollTargetY
       }
     }
 
