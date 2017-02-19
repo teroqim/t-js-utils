@@ -257,4 +257,11 @@ module.exports = {
     // call it once to get started
     tick()
   },
+  shortUrl: url => {
+    return url
+      .replace('https://', '')
+      .replace('http://', '')
+      .replace('www.', '')
+      .split('/')[0]
+  },
 }
