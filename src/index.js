@@ -264,7 +264,7 @@ module.exports = {
       .replace('www.', '')
       .split('/')[0]
   },
-  copyText: text => {
+  copyToClipboard: text => {
     // http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
 
     //
